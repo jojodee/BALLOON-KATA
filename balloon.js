@@ -3,10 +3,10 @@ var balloons = orderPlaced
               .replace(/ sets of/g, "")
               .replace('and', "")
               .replace('.', '');
-  //console.log(balloons);
+ // console.log(balloons);
 var balloonsArray =[];
 balloonSets = balloons.split(",");
-    console.log(balloonSets);
+    //console.log(balloonSets);
 
 balloonSets.forEach(function(sets){
           balloonsArray.push(sets.trim().split(" "));
@@ -17,7 +17,7 @@ balloonsOrderedPerColor = [];
 balloonsArray.forEach(function(arr){
  balloonsOrderedPerColor.push(Number(arr[0]*3) + " " + arr[1]);
 });
-  //console.log(balloonsOrderedPerColor);
+  console.log(balloonsOrderedPerColor);
 
 
 var priceCalculation = [];
@@ -31,7 +31,7 @@ priceCalculation.forEach(function(numb){
   balloons.push(Number(numb[0]));
 });
 
-  console.log(balloons);
+ // console.log(balloons);
 
 totalPrice = balloons[0]*4 + balloons[1]*5 + balloons[2]*5.50;
 
@@ -42,3 +42,31 @@ var costToInflate = [];
 balloons.forEach(function(set){
   costToInflate.push(set * 2);
 });
+
+//console.log(costToInflate);
+
+
+var inflatingCost = costToInflate.reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+}
+console.log(inflatingCost);
+
+var totalCostOfBaloons = inflatingCost + totalPrice;
+//console.log(totalCostOfBaloons);
+
+
+  var totalBalloons = balloons.reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+  }
+ console.log(totalBalloons);
+var people = 25;
+if(totalBalloons>people){
+  console.log("Everyone gets a baloon");
+}
+if( totalBalloons %  people > 0){
+  console.log("We have " + " " + totalBalloons %  people + " " + "extra balloons");
+}
+var checkIfEveryOnGetsBalloon = totalBalloons %  people;
+//console.log(checkIfEveryOnGetsBalloon);
