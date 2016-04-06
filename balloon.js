@@ -63,10 +63,30 @@ var totalCostOfBaloons = inflatingCost + totalPrice;
  console.log(totalBalloons);
 var people = 25;
 if(totalBalloons>people){
-  console.log("Everyone gets a baloon");
+  console.log("Everyone gets a baloon!");
 }
 if( totalBalloons %  people > 0){
-  console.log("We have " + " " + totalBalloons %  people + " " + "extra balloons");
+  console.log("We have " + " " + totalBalloons %  people + " " + "extra balloons!");
 }
 var checkIfEveryOnGetsBalloon = totalBalloons %  people;
 //console.log(checkIfEveryOnGetsBalloon);
+var poppedBalloons = '5 red balloons, 1 blue balloon,and 3 yellow balloons popped';
+var numPopdCalc =  poppedBalloons.split(" ");
+//console.log(numPopdCalc );
+var popped = numPopdCalc.filter(function(item){
+  return item.length<=1;
+});
+//console.log(popped);
+calcTotPop = [];
+popped.forEach(function(item){
+  calcTotPop.push(Number(item));
+});
+  //console.log(calcTotPop);
+  //console.log(numPopped);
+totalPop = calcTotPop.reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+  }
+//console.log(totalPop);
+var pplWthNoBal = people -(totalBalloons-totalPop);
+console.log(pplWthNoBal + " " + " people have no baloons!");
