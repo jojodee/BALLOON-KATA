@@ -17,7 +17,7 @@ balloonsOrderedPerColor = [];
 balloonsArray.forEach(function(arr){
  balloonsOrderedPerColor.push(Number(arr[0]*3) + " " + arr[1]);
 });
-  console.log(balloonsOrderedPerColor);
+  console.log(balloonsOrderedPerColor.toString() + " " + "balloons were ordered");
 
 
 var priceCalculation = [];
@@ -35,7 +35,7 @@ priceCalculation.forEach(function(numb){
 
 totalPrice = balloons[0]*4 + balloons[1]*5 + balloons[2]*5.50;
 
-console.log(totalPrice);
+console.log("The total cost of ballons was " + "R"+totalPrice);
 
 
 var costToInflate = [];
@@ -50,7 +50,7 @@ var inflatingCost = costToInflate.reduce(add, 0);
   function add(a, b) {
     return a + b;
 }
-console.log(inflatingCost);
+console.log("The extra cost for inflating the balloons was " + "R"+inflatingCost);
 
 var totalCostOfBaloons = inflatingCost + totalPrice;
 //console.log(totalCostOfBaloons);
@@ -60,7 +60,7 @@ var totalCostOfBaloons = inflatingCost + totalPrice;
   function add(a, b) {
     return a + b;
   }
- console.log(totalBalloons);
+ //console.log(totalBalloons);
 var people = 25;
 if(totalBalloons>people){
   console.log("Everyone gets a baloon!");
@@ -90,3 +90,12 @@ totalPop = calcTotPop.reduce(add, 0);
 //console.log(totalPop);
 var pplWthNoBal = people -(totalBalloons-totalPop);
 console.log(pplWthNoBal + " " + " people have no baloons!");
+
+colorsPopped = '5 red balloons, 1 blue balloon, and 3 yellow balloons popped';
+var popdLoons = [];
+popdLoons.push(colorsPopped.replace("red balloons", "")
+            .replace("blue balloon", "")
+            .replace("and", "")
+            .replace("yellow balloons popped", "")
+            .replace(/ /g, "").split(","));
+ // console.log(popdLoons);
